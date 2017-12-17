@@ -1,0 +1,30 @@
+<div class="cars-container" id="top">
+    <div class="cars">
+        <li ng-repeat="car in cars">
+            <div class="row carModal">
+                <div class="col-md-2">
+                    <a ng-href="#!/carDetails/{{car.id.increment}}"><h4 ng-bind="car.brand"></h4><p ng-bind="car.model"></p></a>
+                </div>
+                <div class="col-md-8">
+                    <div class="row">
+                        <label class="col-md-2">Année:</label>
+                        <span class="col-md-10" ng-bind="car.year"></span>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-2">Prix:</label>
+                        <span class="col-md-10" ng-bind="car.price"> €</span>
+                    </div>
+                    <div class="row">
+                        <label class="col-md-2">Kilométrage:</label>
+                        <span class="col-md-10" ng-bind="car.km"> km</span>
+                    </div>
+                </div>
+            </div>
+        </li>
+    </div>
+    <div class="row">
+        <div class="col-md-12">
+          <h2><a ng-show="currentPage > 1" ng-click="pageChanged(-1)">Prev Page</a> <a ng-show="currentPage < totalPages" ng-click="pageChanged(1)">Next Page</a></h2>
+        </div>
+    </div>
+</div>
